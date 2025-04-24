@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/coffee-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Break | Cozy Coffee Shop</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./components/header.css">
+    <link rel="stylesheet" href="./components/sections.css">
+    <link rel="stylesheet" href="./components/menu.css">
+    <link rel="stylesheet" href="./components/gallery.css">
+    <link rel="stylesheet" href="./components/contact.css">
+    <link rel="stylesheet" href="./utils/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app" class="light-mode">
+      <!-- Header with Navigation -->
+      <header class="header">
+        <div class="container">
+          <div class="logo">
+            <h1>Coffee Break</h1>
+          </div>
+          <nav class="main-nav">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+              <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+              <li><a href="#home" class="active">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#order">Order</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+          <div class="hero-content">
+            <h2 class="tagline">Coffee. Comfort. Community.</h2>
+            <p>Experience the perfect blend of flavor and ambiance</p>
+            <a href="#about" class="btn primary">Explore More</a>
+          </div>
+          <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="arrow-down"></div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+          <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-content">
+              <div class="about-image fade-in">
+                <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coffee shop interior">
+              </div>
+              <div class="about-text fade-in">
+                <h3>From Bean to Cup</h3>
+                <p>Founded in 2018, Coffee Break began with a simple vision: to create a space where quality coffee meets genuine community. Our journey started with a passion for perfectly roasted beans and a desire to foster connections.</p>
+                <p>Every cup we serve tells a story — from the farms where our beans are ethically sourced, to the careful roasting process, and finally to the skilled baristas who craft your perfect drink.</p>
+                <h3>Owner's Message</h3>
+                <p>"Coffee Break is more than just a coffee shop — it's a home away from home. We're committed to creating moments of joy through exceptional coffee and a warm atmosphere."</p>
+                <p>— Emma Parker, Founder</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu">
+          <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-tabs">
+              <button class="menu-tab active" data-tab="hot-drinks">Hot Drinks</button>
+              <button class="menu-tab" data-tab="cold-brews">Cold Brews</button>
+              <button class="menu-tab" data-tab="pastries">Pastries</button>
+              <button class="menu-tab" data-tab="specials">Specials</button>
+            </div>
+            <div class="menu-content">
+              <!-- Hot Drinks -->
+              <div class="menu-tab-content active" id="hot-drinks">
+                <div class="menu-items">
+                  <div class="menu-item fade-in">
+                    <div class="menu-item-info">
+                      <h3>Classic Espresso</h3>
+                      <p>Pure and intense coffee experience</p>
+                      <span class="price">$3.50</span>
+                    </div>
+                    <div class="menu-item-image">
+                      <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Espresso">
+                    </div>
+                  </div>
+                  <div class="menu-item fade-in">
+                    <div class="menu-item-info">
+                      <h3>Caramel Latte</h3>
+                      <p>Espresso with steamed milk and caramel</p>
+                      <span class="price">$4.75</span>
+                    </div>
+                    <div class="menu-item-image">
+                      <img src="https://images.pexels.com/photos/4792377/pexels-photo-4792377.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Caramel Latte">
+                    </div>
+                  </div>
+                  <div class="menu-item fade-in">
+                    <div class="menu-item-info">
+                      <h3>Cappuccino</h3>
+                      <p>Perfect balance of espresso, steamed milk, and foam</p>
+                      <span class="price">$4.25</span>
+                    </div>
+                    <div class="menu-item-image">
+                      <img src="https://images.pexels.com/photos/350478/pexels-photo-350478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cappuccino">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Cold Brews -->
+              <div class="menu-tab-content" id="cold-brews">
+                <div class="menu-items">
+                  <div class="menu-item fade-in">
+                    <div class="menu-item-info">
+                      <h3>Classic Cold Brew</h3>
+                      <p>Smooth, slow-steeped cold coffee</p>
+                      <span class="price">$4.50</span>
+                    </div>
+                    <div class="menu-item-image">
+                      <img src="https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cold Brew">
+                    </div>
+                  </div>
+                  <div class="menu-item fade-in">
+                    <div class="menu-item-info">
+                      <h3>Vanilla Cold Brew</h3>
+                      <p>Cold brew with vanilla cream</p>
+                      <span class="price">$5.25</span>
+                    </div>
+                    <div class="menu-item-image">
+                      <img src="https://images.pexels.com/photos/2638019/pexels-photo-2638019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Vanilla Cold Brew">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Pastries -->
+              <div class="menu-tab-content" id="pastries">
+                <div class="menu-items">
+                  <div class="menu-item fade-in">
+                    <div class="menu-item-info">
+                      <h3>Butter Croissant</h3>
+                      <p>Flaky, buttery French classic</p>
+                      <span class="price">$3.25</span>
+                    </div>
+                    <div class="menu-item-image">
+                      <img src="https://images.pexels.com/photos/372851/pexels-photo-372851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Croissant">
+                    </div>
+                  </div>
+                  <div class="menu-item fade-in">
+                    <div class="menu-item-info">
+                      <h3>Chocolate Muffin</h3>
+                      <p>Rich chocolate with chocolate chips</p>
+                      <span class="price">$3.75</span>
+                    </div>
+                    <div class="menu-item-image">
+                      <img src="https://images.pexels.com/photos/3776939/pexels-photo-3776939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chocolate Muffin">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Specials -->
+              <div class="menu-tab-content" id="specials">
+                <div class="menu-items">
+                  <div class="menu-item fade-in">
+                    <div class="menu-item-info">
+                      <h3>Seasonal Blend</h3>
+                      <p>Limited edition coffee with notes of caramel and citrus</p>
+                      <span class="price">$5.50</span>
+                    </div>
+                    <div class="menu-item-image">
+                      <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Seasonal Blend">
+                    </div>
+                  </div>
+                  <div class="menu-item fade-in">
+                    <div class="menu-item-info">
+                      <h3>Coffee Break Special</h3>
+                      <p>Our signature drink with espresso, cinnamon, and whipped cream</p>
+                      <span class="price">$6.25</span>
+                    </div>
+                    <div class="menu-item-image">
+                      <img src="https://images.pexels.com/photos/1187317/pexels-photo-1187317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coffee Break Special">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+          <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+              <div class="gallery-item fade-in">
+                <img src="https://images.pexels.com/photos/1813466/pexels-photo-1813466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coffee shop interior">
+              </div>
+              <div class="gallery-item fade-in">
+                <img src="https://images.pexels.com/photos/2611817/pexels-photo-2611817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Latte art">
+              </div>
+              <div class="gallery-item fade-in">
+                <img src="https://images.pexels.com/photos/7658347/pexels-photo-7658347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coffee beans">
+              </div>
+              <div class="gallery-item fade-in">
+                <img src="https://images.pexels.com/photos/1002740/pexels-photo-1002740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="People enjoying coffee">
+              </div>
+              <div class="gallery-item fade-in">
+                <img src="https://images.pexels.com/photos/131979/pexels-photo-131979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coffee machine">
+              </div>
+              <div class="gallery-item fade-in">
+                <img src="https://images.pexels.com/photos/373888/pexels-photo-373888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coffee shop atmosphere">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Order Section (Placeholder) -->
+        <section id="order" class="order">
+          <div class="container">
+            <h2 class="section-title">Online Orders</h2>
+            <div class="coming-soon-container">
+              <div class="coming-soon-icon">
+                <img src="https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coffee to go">
+              </div>
+              <h3>Coming Soon!</h3>
+              <p>Online orders launching soon — stay tuned!</p>
+              <p>Follow us on social media for updates.</p>
+              <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+          <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+              <div class="contact-info fade-in">
+                <h3>Visit Us</h3>
+                <address>
+                  <p>123 Coffee Street</p>
+                  <p>Brewville, BC 10101</p>
+                  <p>Phone: (555) 123-4567</p>
+                  <p>Email: hello@coffeebreak.com</p>
+                </address>
+                
+                <h3>Hours</h3>
+                <ul class="hours-list">
+                  <li><span>Monday - Friday:</span> 7:00 AM - 8:00 PM</li>
+                  <li><span>Saturday:</span> 8:00 AM - 9:00 PM</li>
+                  <li><span>Sunday:</span> 8:00 AM - 6:00 PM</li>
+                </ul>
+                
+                <div class="social-links">
+                  <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+                  <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+                </div>
+              </div>
+              
+              <div class="map-container fade-in">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d-123.1207!3d49.2827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDE2JzU3LjciTiAxMjPCsDA3JzE0LjUiVw!5e0!3m2!1sen!2sus!4v1626312345678!5m2!1sen!2sus" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy">
+                </iframe>
+              </div>
+              
+              <div class="contact-form fade-in">
+                <h3>Send us a message</h3>
+                <form id="contactForm">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                  </div>
+                  <button type="submit" class="btn primary">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <h2>Coffee Break</h2>
+              <p>Coffee. Comfort. Community.</p>
+            </div>
+            <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+              </div>
+              <div class="theme-toggle-footer">
+                <span>Theme:</span>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                  <span class="sun">☀️</span>
+                  <span class="moon">🌙</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2025 Coffee Break. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

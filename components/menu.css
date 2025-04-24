@@ -1,0 +1,124 @@
+/* Menu Section */
+.menu {
+  background-color: var(--color-current-bg);
+  padding: var(--space-xxl) 0;
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.menu-tab {
+  padding: var(--space-sm) var(--space-lg);
+  margin: 0 var(--space-xs);
+  margin-bottom: var(--space-sm);
+  background-color: transparent;
+  border: 2px solid var(--color-current-primary);
+  border-radius: var(--border-radius-md);
+  color: var(--color-current-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-tab:hover {
+  background-color: var(--color-current-primary-light);
+  color: var(--color-bg-alt);
+}
+
+.menu-tab.active {
+  background-color: var(--color-current-primary);
+  color: var(--color-bg-alt);
+}
+
+.menu-tab-content {
+  display: none;
+}
+
+.menu-tab-content.active {
+  display: block;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-xl);
+}
+
+.menu-item {
+  background-color: var(--color-current-bg-alt);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.menu-item-info {
+  padding: var(--space-lg);
+}
+
+.menu-item-info h3 {
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-size-lg);
+}
+
+.menu-item-info p {
+  color: var(--color-current-text-light);
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-sm);
+}
+
+.price {
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  color: var(--color-current-primary);
+}
+
+.menu-item-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.menu-item:hover .menu-item-image img {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .menu-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-tab {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--font-size-sm);
+  }
+}
