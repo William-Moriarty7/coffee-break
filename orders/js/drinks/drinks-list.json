@@ -1,0 +1,212 @@
+[
+      {
+        "id": 1,
+        "name": "Classic Espresso",
+        "price": 2.50,
+        "description": "A strong, concentrated shot of coffee with a rich crema.",
+        "image": ""
+      },
+      {
+        "id": 2,
+        "name": "Iced Caramel Macchiato",
+        "price": 5.50,
+        "description": "Layered espresso, milk, vanilla syrup, and caramel drizzle over ice.",
+        "image": ""
+      },
+      {
+        "id": 3,
+        "name": "Nitro Cold Brew",
+        "price": 6.00,
+        "description": "Smooth cold brewed coffee infused with nitrogen for a creamy texture.",
+        "image": ""
+      },
+      {
+        "id": 4,
+        "name": "Flat White",
+        "price": 4.50,
+        "description": "Espresso with velvety microfoam for a rich, smooth taste.",
+        "image": ""
+      },
+      {
+        "id": 5,
+        "name": "Cappuccino",
+        "price": 4.00,
+        "description": "Espresso with equal parts steamed milk and foam.",
+        "image": ""
+      },
+      {
+        "id": 6,
+        "name": "Americano",
+        "price": 3.50,
+        "description": "Espresso diluted with hot water for a milder flavor.",
+        "image": ""
+      },
+      {
+        "id": 7,
+        "name": "Latte",
+        "price": 4.50,
+        "description": "Espresso with steamed milk and a light layer of foam.",
+        "image": ""
+      },
+      {
+        "id": 8,
+        "name": "Mocha",
+        "price": 5.00,
+        "description": "Espresso with chocolate syrup, steamed milk, and whipped cream.",
+        "image": ""
+      },
+    {
+        "id": 9,
+        "name": "Macchiato",
+        "price": 3.75,
+        "description": "Espresso 'stained' with a dollop of foamed milk.",
+        "image": ""
+      },
+      {
+        "id": 10,
+        "name": "Affogato",
+        "price": 6.50,
+        "description": "Vanilla ice cream drowned in a shot of hot espresso.",
+        "image": ""
+      },
+      {
+        "id": 11,
+        "name": "Turkish Coffee",
+        "price": 4.00,
+        "description": "Finely ground coffee boiled with sugar in a cezve.",
+        "image": ""
+      },
+      {
+        "id": 12,
+        "name": "Irish Coffee",
+        "price": 7.00,
+        "description": "Hot coffee with Irish whiskey, sugar, and whipped cream.",
+        "image": ""
+      },
+      {
+        "id": 13,
+        "name": "Vietnamese Iced Coffee",
+        "price": 5.50,
+        "description": "Strong dark roast with sweetened condensed milk over ice.",
+        "image": ""
+      },
+      {
+        "id": 14,
+        "name": "Red Eye",
+        "price": 4.50,
+        "description": "Drip coffee with a shot of espresso for extra caffeine.",
+        "image": ""
+      },
+      {
+        "id": 15,
+        "name": "Black Eye",
+        "price": 5.00,
+        "description": "Drip coffee with two shots of espresso for a serious kick.",
+        "image": ""
+      },
+      {
+        "id": 16,
+        "name": "Dalgona Coffee",
+        "price": 5.50,
+        "description": "Whipped instant coffee with sugar, served over milk.",
+        "image": ""
+      },
+      {
+        "id": 17,
+        "name": "Bulletproof Coffee",
+        "price": 6.50,
+        "description": "Coffee blended with butter and MCT oil for keto energy.",
+        "image": ""
+      },
+      {
+        "id": 18,
+        "name": "Cortado",
+        "price": 4.25,
+        "description": "Espresso cut with a small amount of warm milk.",
+        "image": ""
+      },
+      {
+        "id": 19,
+        "name": "Gibraltar",
+        "price": 4.50,
+        "description": "Similar to a cortado but served in a small glass.",
+        "image": ""
+      },
+      {
+        "id": 20,
+        "name": "Pumpkin Spice Latte",
+        "price": 5.75,
+        "description": "Seasonal espresso drink with pumpkin, cinnamon, and nutmeg.",
+        "image": ""
+      },
+      {
+        "id": 21,
+        "name": "Hazelnut Latte",
+        "price": 5.25,
+        "description": "Latte flavored with sweet hazelnut syrup.",
+        "image": ""
+      },
+      {
+        "id": 22,
+        "name": "Vanilla Latte",
+        "price": 5.00,
+        "description": "Espresso with vanilla syrup and steamed milk.",
+        "image": ""
+      },
+      {
+        "id": 23,
+        "name": "Caramel Latte",
+        "price": 5.50,
+        "description": "Latte with caramel syrup and whipped cream.",
+        "image": ""
+      },
+      {
+        "id": 24,
+        "name": "Coconut Latte",
+        "price": 5.25,
+        "description": "Latte made with coconut milk for a tropical twist.",
+        "image": ""
+      },
+      {
+        "id": 25,
+        "name": "Almond Milk Latte",
+        "price": 5.50,
+        "description": "Latte made with creamy almond milk.",
+        "image": ""
+      },
+      {
+        "id": 26,
+        "name": "Oat Milk Latte",
+        "price": 5.75,
+        "description": "Latte made with smooth oat milk.",
+        "image": ""
+      },
+      {
+        "id": 27,
+        "name": "Iced Latte",
+        "price": 5.00,
+        "description": "Espresso with cold milk served over ice.",
+        "image": ""
+      },
+      {
+        "id": 28,
+        "name": "Iced Mocha",
+        "price": 5.50,
+        "description": "Chocolatey espresso drink served cold with milk.",
+        "image": ""
+      },
+      {
+        "id": 29,
+        "name": "Iced Vanilla Latte",
+        "price": 5.25,
+        "description": "Sweet vanilla latte served over ice.",
+        "image": ""
+      },
+      {
+        "id": 30,
+        "name": "Iced Caramel Latte",
+        "price": 5.75,
+        "description": "Caramel-flavored latte served chilled.",
+        "image": ""
+      }
+    ]
