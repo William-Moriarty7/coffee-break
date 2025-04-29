@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Break | Admin Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../coffee-icon.svg">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app" class="light-mode">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2>Coffee Break</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="index.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders/index.html">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Orders</span>
+                            <span class="badge">12</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="products/index.html">
+                            <i class="fas fa-coffee"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customers/index.html">
+                            <i class="fas fa-users"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button onclick="" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Admin Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="admin-search">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Admin Profile">
+                        <span>Admin User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="admin-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #FCDEC0;">
+                            <i class="fas fa-shopping-bag" style="color: #B85C38;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Today's Orders</h3>
+                            <p>24</p>
+                            <span class="stat-change positive">+12%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #E5B299;">
+                            <i class="fas fa-coffee" style="color: #5C4033;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Products</h3>
+                            <p>18</p>
+                            <span class="stat-change positive">+2 new</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #B4846C;">
+                            <i class="fas fa-users" style="color: #FDF6EC;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Customers</h3>
+                            <p>156</p>
+                            <span class="stat-change positive">+8%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #7D5A50;">
+                            <i class="fas fa-dollar-sign" style="color: #FDF6EC;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Revenue</h3>
+                            <p>$1,245</p>
+                            <span class="stat-change negative">-5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Recent Orders</h2>
+                        <a href="orders/index.html" class="btn outline">View All</a>
+                    </div>
+                    <div class="table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Items</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#CB-1001</td>
+                                    <td>John Smith</td>
+                                    <td>2</td>
+                                    <td>$12.50</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td>Today, 10:30 AM</td>
+                                    <td>
+                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#CB-1000</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>3</td>
+                                    <td>$18.75</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td>Today, 9:15 AM</td>
+                                    <td>
+                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#CB-999</td>
+                                    <td>Michael Brown</td>
+                                    <td>1</td>
+                                    <td>$4.50</td>
+                                    <td><span class="status cancelled">Cancelled</span></td>
+                                    <td>Yesterday, 4:45 PM</td>
+                                    <td>
+                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#CB-998</td>
+                                    <td>Emily Davis</td>
+                                    <td>4</td>
+                                    <td>$24.00</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td>Yesterday, 2:30 PM</td>
+                                    <td>
+                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Popular Products -->
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Popular Products</h2>
+                        <a href="products/index.html" class="btn outline">Manage Products</a>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg" alt="Espresso">
+                            </div>
+                            <div class="product-info">
+                                <h3>Classic Espresso</h3>
+                                <p>24 orders this week</p>
+                                <div class="product-meta">
+                                    <span>$3.50</span>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/4792377/pexels-photo-4792377.jpeg" alt="Caramel Latte">
+                            </div>
+                            <div class="product-info">
+                                <h3>Caramel Latte</h3>
+                                <p>18 orders this week</p>
+                                <div class="product-meta">
+                                    <span>$4.75</span>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg" alt="Cold Brew">
+                            </div>
+                            <div class="product-info">
+                                <h3>Classic Cold Brew</h3>
+                                <p>15 orders this week</p>
+                                <div class="product-meta">
+                                    <span>$4.50</span>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/372851/pexels-photo-372851.jpeg" alt="Croissant">
+                            </div>
+                            <div class="product-info">
+                                <h3>Butter Croissant</h3>
+                                <p>12 orders this week</p>
+                                <div class="product-meta">
+                                    <span>$3.25</span>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    
+</body>
+</html>

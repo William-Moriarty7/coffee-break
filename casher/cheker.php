@@ -21,5 +21,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && $_POST['action'] === 'cancel'){
     }
 }
 
+if ($_SERVER['REQUEST_METHOD'] === "POST" && $_POST['action'] === 'get_old'){
+    $kay = $_POST['random_key'];
+    $stmt = $db->prepare('SELECT * FROM casher WHERE random_key = :random_key');
+    $stmt->bindValue(':random_key', $kay, SQLITE3_TEXT);
+    $result = $stmt->execute();
+    $data = $result->fetchArray(SQLITE3_ASSOC);
+    
+    echo json_encode([
+        'status'=> 'success',
+        'data'=> $data
+        ]);
+}
 
 ?>
