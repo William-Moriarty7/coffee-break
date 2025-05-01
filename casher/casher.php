@@ -11,6 +11,7 @@ $db->exec('CREATE TABLE IF NOT EXISTS casher (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT,
     cartorder TEXT,
+    full_price TEXT,
     random_key TEXT,
     state TEXT,
     created_at TEXT
@@ -30,6 +31,7 @@ function generateRandomKey($length = 15) {
 $cartJson = $_POST['cart'] ?? '';
 $userName = $_POST['userName'] ?? '';
 $password_kay = $_POST['random_key'] ??'';
+$full_price = $_POST['full_price'];
 
 if (empty($cartJson) || empty($userName)) {
     echo json_encode([
@@ -61,13 +63,14 @@ $cartOrder = implode(',', $cartOrderIds);
 // Generate random key
 $randomKey = generateRandomKey();
 
-function insertdata($db, $userName, $cartOrder, $randomKey) {
-    $stmt = $db->prepare('INSERT INTO casher (username, cartorder, random_key, state, created_at)
-                          VALUES (:username, :cartorder, :random_key, :state, :created_at)');
+function insertdata($db, $userName, $cartOrder, $randomKey,$full_price) {
+    $stmt = $db->prepare('INSERT INTO casher (username, cartorder, full_price, random_key, state, created_at)
+                          VALUES (:username, :cartorder, :full_price, :random_key, :state, :created_at)');
     $stmt->bindValue(':username', $userName, SQLITE3_TEXT);
     $stmt->bindValue(':cartorder', $cartOrder, SQLITE3_TEXT);
     $stmt->bindValue(':random_key', $randomKey, SQLITE3_TEXT);
     $stmt->bindValue(':state', 'pending', SQLITE3_TEXT);
+    $stmt->bindValue(':full_price',$full_price, SQLITE3_TEXT); // Assuming full_price is 0 for now
     $stmt->bindValue(':created_at', date('Y-m-d H:i:s'), SQLITE3_TEXT);
 
     $result = $stmt->execute();
@@ -92,7 +95,7 @@ try {
         ]);
         exit;
     }else{
-        if (insertdata($db, $userName, $cartOrder, $randomKey)) {
+        if (insertdata($db, $userName, $cartOrder, $randomKey , $full_price)) {
         echo json_encode([
             "status" => "success",
             "message" => "Order placed successfully!",

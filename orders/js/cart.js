@@ -37,6 +37,7 @@ function addtocart(button) {
         button.innerHTML = "Order Now";
     }, 2000);
 }
+let totalPrice = 0;
 function showCart() {
     cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -75,7 +76,7 @@ function showCart() {
     }, []);
 
     // Calculate the total price
-    let totalPrice = groupedCart.reduce((acc, item) => {
+    totalPrice = groupedCart.reduce((acc, item) => {
         return acc + (item.price * item.quantity);
     }, 0);
 
@@ -152,8 +153,10 @@ function showCart() {
                     const userName = nameResult.value;
                     const random_key = localStorage.getItem("random_key") || null;
 
-                    $.post("../casher/casher.php", { cart: JSON.stringify(cart), userName: userName, random_key: random_key }, function (response) {
+                    $.post("../casher/casher.php", { cart: JSON.stringify(cart), userName: userName, random_key: random_key , full_price : totalPrice}, function (response) {
                         try {
+                            console.log({ cart: JSON.stringify(cart), userName: userName, random_key: random_key , full_price : totalPrice.toFixed(2)});
+                            
                             const res = typeof response === "string" ? JSON.parse(response) : response;
 
                             if (res.status === "success") {

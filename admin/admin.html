@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Break | Admin Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../coffee-icon.svg">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -29,26 +30,26 @@
                         </a>
                     </li>
                     <li>
-                        <a href="orders/index.html">
+                        <a href="">
                             <i class="fas fa-shopping-bag"></i>
                             <span>Orders</span>
                             <span class="badge">12</span>
                         </a>
                     </li>
                     <li>
-                        <a href="products/index.html">
+                        <a href="">
                             <i class="fas fa-coffee"></i>
                             <span>Products</span>
                         </a>
                     </li>
                     <li>
-                        <a href="customers/index.html">
+                        <a href="">
                             <i class="fas fa-users"></i>
                             <span>Customers</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="">
                             <i class="fas fa-chart-line"></i>
                             <span>Analytics</span>
                         </a>
@@ -62,13 +63,12 @@
                 </ul>
             </nav>
             <div class="sidebar-footer">
-                <button onclick="" class="theme-toggle" aria-label="Toggle dark mode">
+                <button onclick="themeToggle()" class="theme-toggle" aria-label="Toggle dark mode">
                     <span class="sun">☀️</span>
                     <span class="moon">🌙</span>
                 </button>
             </div>
         </aside>
-
         <!-- Main Content -->
         <main class="admin-main">
             <!-- Admin Header -->
@@ -157,7 +157,7 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="customer">
                                 <tr>
                                     <td>#CB-1001</td>
                                     <td>John Smith</td>
@@ -299,7 +299,7 @@
             </div>
         </main>
     </div>
-
-    
+    <script src="js/togglethem.js"></script>
+    <script src="js/importal.js"></script>
 </body>
 </html>

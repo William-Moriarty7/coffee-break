@@ -1,7 +1,8 @@
 function themeToggle() {
     const body = document.body;
     const app = document.getElementById('app');
-
+    console.log("themeToggle function called");
+    
     // Toggle between light-mode and dark-mode
     if (body.classList.contains("light-mode")) {
         body.classList.remove("light-mode");

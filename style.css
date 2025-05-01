@@ -90,11 +90,12 @@ body {
   --color-current-bg: var(--color-dark-bg);
   --color-current-bg-alt: var(--color-dark-bg-alt);
   --color-current-shadow: var(--color-dark-shadow);
+  --color-body-ad:#100f0f;
 }
 
 body {
   color: var(--color-current-text);
-  background-color: var(--color-current-bg);
+  background-color: var(--color-body-ad);
   transition: background-color 0.3s, color 0.3s;
 }
 
