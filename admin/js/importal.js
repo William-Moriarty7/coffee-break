@@ -4,7 +4,6 @@ function customers() {
     $.post("myphp/importal.php", { status: "customers" },
         function (response) {
             response = JSON.parse(response);
-            console.log(response.data);
             if (response.status === 'success') {
                 let data_list = "";
                 for (let i = 0; i < response.data.length; i++) {
@@ -14,12 +13,12 @@ function customers() {
                             <td>${customer.random_key}</td>
                             <td>${customer.username}</td>
                             <td>${customer.cartorder.split(",").map(Number).length}</td>
-                            <td>$${customer.full_price}</td>
-                            <td><span class="status completed">${customer.state}</span></td>
-                            <td>${customer.created_at}</td>
+                            <td>$${parseFloat(customer.full_price).toFixed(2)}</td>
+                            <td><span class="status ${customer.state.toLowerCase()}">${customer.state}</span></td>
+                            <td>${new Date(customer.created_at).toLocaleDateString()}</td>
                             <td>
-                                <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn view" onclick="fa_eye('${customer.cartorder}')"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn edit" onclick="editCustomerStatu('${customer.random_key}')"><i class="fas fa-edit"></i></button>
                             </td>
                         </tr>
                     `;

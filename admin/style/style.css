@@ -275,7 +275,7 @@
     text-transform: uppercase;
 }
 
-.status.completed {
+.status.done {
     background-color: rgba(76, 175, 80, 0.1);
     color: #4CAF50;
 }
@@ -290,6 +290,10 @@
     color: #F44336;
 }
 
+.status.processing {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: #FF9800;
+}
 .action-btn {
     background: none;
     border: none;

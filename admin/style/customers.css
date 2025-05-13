@@ -1,0 +1,211 @@
+/* Customers Management Styles */
+
+/* Customer Controls */
+.customer-controls {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    padding-left: var(--space-xl);
+    border: 1px solid var(--color-current-primary-light);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-current-bg-alt);
+    color: var(--color-current-text);
+    transition: all var(--transition-fast);
+}
+
+.search-box input:focus {
+    border-color: var(--color-current-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.search-box i {
+    position: absolute;
+    left: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-current-primary-light);
+}
+
+.customer-filters select {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-current-primary-light);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-current-bg-alt);
+    color: var(--color-current-text);
+    cursor: pointer;
+    min-width: 150px;
+}
+
+/* Customer Table */
+.table-responsive {
+    background-color: var(--color-current-bg-alt);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+#customers-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#customers-table th {
+    background-color: var(--color-current-primary-light);
+    color: var(--color-current-primary-dark);
+    font-weight: 600;
+    text-align: left;
+    padding: var(--space-md);
+    white-space: nowrap;
+}
+
+#customers-table td {
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--color-current-primary-light);
+    vertical-align: middle;
+}
+
+#customers-table tr:last-child td {
+    border-bottom: none;
+}
+
+#customers-table tr:hover {
+    background-color: rgba(125, 90, 80, 0.05);
+}
+
+/* Status Badges */
+.status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status.active {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.status.inactive {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+}
+
+/* Order Key */
+.order-key {
+    font-family: monospace;
+    background-color: var(--color-current-bg);
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-current-text-light);
+}
+
+/* Action Buttons */
+.action-btn {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: var(--space-xs);
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn.view {
+    color: var(--color-current-primary);
+}
+
+.action-btn.view:hover {
+    background-color: rgba(125, 90, 80, 0.1);
+}
+
+.action-btn.edit {
+    color: #2196F3;
+}
+
+.action-btn.edit:hover {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+
+.action-btn.delete {
+    color: #F44336;
+}
+
+.action-btn.delete:hover {
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* Alert Messages */
+.alert {
+    padding: var(--space-md);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.alert-danger {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+    border: 1px solid rgba(244, 67, 54, 0.2);
+}
+
+.alert i {
+    font-size: var(--font-size-lg);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .customer-controls {
+        flex-direction: column;
+    }
+
+    .customer-filters select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        margin: 0 -var(--space-md);
+        border-radius: 0;
+    }
+
+    #customers-table th,
+    #customers-table td {
+        padding: var(--space-sm);
+    }
+
+    .action-btn {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-header {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .section-header .btn {
+        width: 100%;
+    }
+} 

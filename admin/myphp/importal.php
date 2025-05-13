@@ -6,7 +6,7 @@ $db->exec('CREATE TABLE IF NOT EXISTS casher (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT,
     cartorder TEXT,
-    full_price TEXT,
+    full_price DECIMAL(10,2),
     random_key TEXT,
     state TEXT,
     created_at TEXT

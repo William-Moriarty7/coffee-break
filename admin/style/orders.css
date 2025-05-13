@@ -1,0 +1,211 @@
+/* Orders Table Styles */
+.table-responsive {
+    background-color: var(--color-current-bg-alt);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-top: var(--space-md);
+    overflow: hidden;
+}
+
+#orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+#orders-table thead {
+    background-color: var(--color-current-primary);
+    color: var(--color-bg-alt);
+}
+
+#orders-table th {
+    padding: var(--space-md);
+    text-align: left;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#orders-table td {
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--color-current-bg);
+    font-size: var(--font-size-sm);
+    color: var(--color-current-text);
+}
+
+#orders-table tbody tr:hover {
+    background-color: var(--color-current-bg);
+}
+
+/* Status Badge Styles */
+.status {
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status.pending {
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.status.completed {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.status.cancelled {
+    background-color: #F8D7DA;
+    color: #721C24;
+}
+
+/* Action Buttons */
+.action-btn {
+    background: none;
+    border: none;
+    padding: var(--space-xs);
+    margin: 0 var(--space-xs);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: var(--color-current-text);
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+.action-btn.view {
+    color: var(--color-current-primary);
+}
+
+.action-btn.edit {
+    color: #28a745;
+}
+
+.action-btn.delete {
+    color: #dc3545;
+}
+
+/* Order Key */
+.order-key {
+    font-family: monospace;
+    font-size: var(--font-size-xs);
+    color: var(--color-current-text-light);
+    background-color: var(--color-current-bg);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius-sm);
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+
+.section-header h2 {
+    margin-bottom: 0;
+    color: var(--color-current-primary);
+}
+
+/* Order Filters */
+.order-filters {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.form-select {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-current-primary-light);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--color-current-bg-alt);
+    color: var(--color-current-text);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-current-primary);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        gap: var(--space-md);
+        align-items: flex-start;
+    }
+
+    .order-filters {
+        width: 100%;
+    }
+
+    .form-select {
+        width: 100%;
+    }
+
+    #orders-table {
+        display: block;
+    }
+
+    #orders-table thead {
+        display: none;
+    }
+
+    #orders-table tbody tr {
+        display: block;
+        margin-bottom: var(--space-md);
+        border: 1px solid var(--color-current-bg);
+        border-radius: var(--border-radius-sm);
+    }
+
+    #orders-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--space-sm) var(--space-md);
+        border-bottom: 1px solid var(--color-current-bg);
+    }
+
+    #orders-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--color-current-primary);
+    }
+
+    .action-btn {
+        margin: 0 var(--space-xs);
+    }
+}
+
+/* Dark Mode Support */
+.dark-mode .table-responsive {
+    background-color: var(--color-dark-bg-alt);
+}
+
+.dark-mode #orders-table td {
+    border-bottom-color: var(--color-dark-bg);
+}
+
+.dark-mode #orders-table tbody tr:hover {
+    background-color: var(--color-dark-bg);
+}
+
+.dark-mode .order-key {
+    background-color: var(--color-dark-bg);
+}
+
+.dark-mode .form-select {
+    background-color: var(--color-dark-bg-alt);
+    border-color: var(--color-dark-primary-light);
+}
+
+.dark-mode .form-select:focus {
+    border-color: var(--color-dark-primary);
+} 

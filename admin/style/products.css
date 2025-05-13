@@ -1,0 +1,275 @@
+/* Products Table Styles */
+.table-responsive {
+    background: var(--color-current-bg-alt);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    margin: var(--space-lg) 0;
+    padding: var(--space-lg);
+}
+
+#products-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: var(--font-body);
+}
+
+#products-table thead th {
+    background-color: var(--color-current-bg);
+    color: var(--color-current-text);
+    font-weight: 600;
+    padding: var(--space-md);
+    text-align: left;
+    border-bottom: 2px solid var(--color-current-primary-light);
+    font-family: var(--font-heading);
+}
+
+#products-table tbody td {
+    padding: var(--space-md);
+    vertical-align: middle;
+    border-bottom: 1px solid var(--color-current-primary-light);
+    color: var(--color-current-text);
+}
+
+#products-table tbody tr:hover {
+    background-color: var(--color-current-bg);
+}
+
+/* Section Header Styles */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+
+.section-header h2 {
+    color: var(--color-current-primary);
+    font-size: var(--font-size-xxl);
+    margin: 0;
+    font-family: var(--font-heading);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--color-accent);
+    border: none;
+    color: var(--color-bg-alt);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--font-size-sm);
+    border-radius: var(--border-radius-sm);
+    margin: 0 var(--space-xs);
+}
+
+.btn-warning {
+    background-color: var(--color-secondary-light);
+    color: var(--color-accent);
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: var(--color-accent);
+    color: var(--color-bg-alt);
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Alert Styles */
+.alert {
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    font-family: var(--font-body);
+}
+
+.alert-danger {
+    background-color: var(--color-current-bg);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.alert i {
+    margin-right: var(--space-sm);
+    font-size: var(--font-size-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table-responsive {
+        padding: var(--space-md);
+    }
+
+    #products-table thead {
+        display: none;
+    }
+
+    #products-table tbody tr {
+        display: block;
+        margin-bottom: var(--space-md);
+        border: 1px solid var(--color-current-primary-light);
+        border-radius: var(--border-radius-md);
+    }
+
+    #products-table tbody td {
+        display: block;
+        text-align: right;
+        padding: var(--space-sm) var(--space-md);
+        position: relative;
+        border-bottom: 1px solid var(--color-current-primary-light);
+    }
+
+    #products-table tbody td:last-child {
+        border-bottom: none;
+    }
+
+    #products-table tbody td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: var(--font-size-xs);
+        color: var(--color-current-primary);
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+    }
+
+    .btn-sm {
+        width: 100%;
+        margin: var(--space-xs) 0;
+    }
+}
+
+/* Dark Mode Support */
+.dark-mode .table-responsive {
+    background: var(--color-dark-bg-alt);
+    box-shadow: var(--shadow-md);
+}
+
+.dark-mode #products-table thead th {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+    border-bottom-color: var(--color-dark-primary);
+}
+
+.dark-mode #products-table tbody td {
+    color: var(--color-dark-text);
+    border-bottom-color: var(--color-dark-primary);
+}
+
+.dark-mode #products-table tbody tr:hover {
+    background-color: var(--color-dark-bg);
+}
+
+.dark-mode .section-header h2 {
+    color: var(--color-dark-text);
+}
+
+.dark-mode .alert-danger {
+    background-color: var(--color-dark-bg);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* Action Buttons */
+.action-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--border-radius-sm);
+    border: none;
+    background: var(--color-current-bg);
+    color: var(--color-current-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+}
+
+.action-btn i {
+    font-size: var(--font-size-sm);
+}
+
+.action-btn.edit {
+    color: var(--color-accent);
+}
+
+.action-btn.edit:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-alt);
+}
+
+.action-btn.delete {
+    color: var(--color-accent);
+}
+
+.action-btn.delete:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-alt);
+}
+
+/* Dark Mode Support for Action Buttons */
+.dark-mode .action-btn {
+    background: var(--color-dark-bg-alt);
+}
+
+.dark-mode .action-btn.edit,
+.dark-mode .action-btn.delete {
+    color: var(--color-accent);
+}
+
+.dark-mode .action-btn.edit:hover,
+.dark-mode .action-btn.delete:hover {
+    background: var(--color-accent);
+    color: var(--color-dark-bg);
+}
+
+/* Responsive Design for Action Buttons */
+@media (max-width: 768px) {
+    .action-btn {
+        width: 28px;
+        height: 28px;
+        margin: 0 1px;
+    }
+
+    .action-btn i {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* Active Menu Item Styles */
+.sidebar-nav li.active {
+    background-color: var(--color-current-bg);
+    border-left: 3px solid var(--color-accent);
+}
+/* Dark Mode Support for Active Menu Item */
+.dark-mode .sidebar-nav li.active {
+    background-color: var(--color-dark-bg-alt);
+}

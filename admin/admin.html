@@ -7,11 +7,15 @@
     <link rel="icon" type="image/svg+xml" href="../coffee-icon.svg">
     <link rel="stylesheet" href="root.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/products.css">
+    <link rel="stylesheet" href="style/orders.css">
+    <link rel="stylesheet" href="style/customers.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div id="app" class="light-mode">
@@ -24,26 +28,26 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li class="active">
-                        <a href="index.html">
+                        <a href="">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="orders()" href="#orders">
                             <i class="fas fa-shopping-bag"></i>
                             <span>Orders</span>
                             <span class="badge">12</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="products()" href="#products">
                             <i class="fas fa-coffee"></i>
                             <span>Products</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="customers()" href="#customers">
                             <i class="fas fa-users"></i>
                             <span>Customers</span>
                         </a>
@@ -55,7 +59,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="">
                             <i class="fas fa-cog"></i>
                             <span>Settings</span>
                         </a>
@@ -102,7 +106,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>Today's Orders</h3>
-                            <p>24</p>
+                            <p id="Today-Orders">0</p>
                             <span class="stat-change positive">+12%</span>
                         </div>
                     </div>
@@ -112,7 +116,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>Products</h3>
-                            <p>18</p>
+                            <p id="Products">0</p>
                             <span class="stat-change positive">+2 new</span>
                         </div>
                     </div>
@@ -122,7 +126,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>Customers</h3>
-                            <p>156</p>
+                            <p id="Customers">0</p>
                             <span class="stat-change positive">+8%</span>
                         </div>
                     </div>
@@ -132,7 +136,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>Revenue</h3>
-                            <p>$1,245</p>
+                            <p id="Revenue">$0</p>
                             <span class="stat-change negative">-5%</span>
                         </div>
                     </div>
@@ -142,7 +146,7 @@
                 <div class="content-section">
                     <div class="section-header">
                         <h2>Recent Orders</h2>
-                        <a href="orders/index.html" class="btn outline">View All</a>
+                        <a onclick="orders()" href="#orders" class="btn outline">View All</a>
                     </div>
                     <div class="table-container">
                         <table class="admin-table">
@@ -158,54 +162,7 @@
                                 </tr>
                             </thead>
                             <tbody id="customer">
-                                <tr>
-                                    <td>#CB-1001</td>
-                                    <td>John Smith</td>
-                                    <td>2</td>
-                                    <td>$12.50</td>
-                                    <td><span class="status completed">Completed</span></td>
-                                    <td>Today, 10:30 AM</td>
-                                    <td>
-                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#CB-1000</td>
-                                    <td>Sarah Johnson</td>
-                                    <td>3</td>
-                                    <td>$18.75</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                    <td>Today, 9:15 AM</td>
-                                    <td>
-                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#CB-999</td>
-                                    <td>Michael Brown</td>
-                                    <td>1</td>
-                                    <td>$4.50</td>
-                                    <td><span class="status cancelled">Cancelled</span></td>
-                                    <td>Yesterday, 4:45 PM</td>
-                                    <td>
-                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#CB-998</td>
-                                    <td>Emily Davis</td>
-                                    <td>4</td>
-                                    <td>$24.00</td>
-                                    <td><span class="status completed">Completed</span></td>
-                                    <td>Yesterday, 2:30 PM</td>
-                                    <td>
-                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                                    </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -215,7 +172,7 @@
                 <div class="content-section">
                     <div class="section-header">
                         <h2>Popular Products</h2>
-                        <a href="products/index.html" class="btn outline">Manage Products</a>
+                        <a href="" class="btn outline">Manage Products</a>
                     </div>
                     <div class="products-grid">
                         <div class="product-card">
@@ -299,7 +256,13 @@
             </div>
         </main>
     </div>
+    <script src="admin.js"></script>
     <script src="js/togglethem.js"></script>
     <script src="js/importal.js"></script>
+    <script src="js/fa-eye.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/customers.js"></script>
 </body>
 </html>
