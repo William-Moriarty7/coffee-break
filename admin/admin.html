@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="style/products.css">
     <link rel="stylesheet" href="style/orders.css">
     <link rel="stylesheet" href="style/customers.css">
+    <link rel="stylesheet" href="style/analytics.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div id="app" class="light-mode">
@@ -28,7 +30,7 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li class="active">
-                        <a href="">
+                        <a href="#dashboard">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
@@ -53,15 +55,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="analytics()" href="#analytics">
                             <i class="fas fa-chart-line"></i>
                             <span>Analytics</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <i class="fas fa-cog"></i>
-                            <span>Settings</span>
                         </a>
                     </li>
                 </ul>
@@ -91,7 +87,6 @@
                     <div class="admin-profile">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Admin Profile">
                         <span>Admin User</span>
-                        <i class="fas fa-chevron-down"></i>
                     </div>
                 </div>
             </header>
@@ -107,7 +102,6 @@
                         <div class="stat-info">
                             <h3>Today's Orders</h3>
                             <p id="Today-Orders">0</p>
-                            <span class="stat-change positive">+12%</span>
                         </div>
                     </div>
                     <div class="stat-card">
@@ -117,7 +111,6 @@
                         <div class="stat-info">
                             <h3>Products</h3>
                             <p id="Products">0</p>
-                            <span class="stat-change positive">+2 new</span>
                         </div>
                     </div>
                     <div class="stat-card">
@@ -127,7 +120,6 @@
                         <div class="stat-info">
                             <h3>Customers</h3>
                             <p id="Customers">0</p>
-                            <span class="stat-change positive">+8%</span>
                         </div>
                     </div>
                     <div class="stat-card">
@@ -137,7 +129,6 @@
                         <div class="stat-info">
                             <h3>Revenue</h3>
                             <p id="Revenue">$0</p>
-                            <span class="stat-change negative">-5%</span>
                         </div>
                     </div>
                 </div>
@@ -258,11 +249,12 @@
     </div>
     <script src="admin.js"></script>
     <script src="js/togglethem.js"></script>
-    <script src="js/importal.js"></script>
     <script src="js/fa-eye.js"></script>
     <script src="js/products.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/orders.js"></script>
     <script src="js/customers.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>

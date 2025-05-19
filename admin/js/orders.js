@@ -14,8 +14,6 @@ function orders() {
         action: 'getOrders'
     }, function(response) {
         try {
-            console.log('Response:', response); // Debug log
-
             // Check if response is valid
             if (!response) {
                 throw new Error('No response received from server');
@@ -97,13 +95,13 @@ function orders() {
                     <td>${formatDate(order.created_at || new Date())}</td>
                     <td><span class="order-key">${order.random_key || 'N/A'}</span></td>
                     <td>
-                        <button class="action-btn view" data-id="${order.id || ''}" title="View Order Details">
+                        <button class="action-btn view" data-id="${order.id || ''}" title="View Order Details" onclick="fa_eye('${order.cartorder}')">
                             <i class="fas fa-eye"></i>
                         </button>
-                        <button class="action-btn edit" data-id="${order.id || ''}" title="Edit Order">
+                        <button class="action-btn edit" data-id="${order.id || ''}" title="Edit Order" onclick="editCustomerStatu('${order.random_key}')">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button class="action-btn delete" data-id="${order.id || ''}" title="Delete Order">
+                        <button class="action-btn delete" data-id="${order.id || ''}" title="Delete Order" onclick="delete_item('customer','${order.random_key}','orders')">
                             <i class="fas fa-trash"></i>
                         </button>
                     </td>

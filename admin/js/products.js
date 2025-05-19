@@ -12,16 +12,13 @@ function products() {
     // Update header title
     $('.admin-header h1').text('Products Management');
 
-    $.post('../orders/js/drinks/drinks-list.json', function(response) {
+    $.get('myphp/products.php', function(response) {
         try {
-            console.log('Response:', response); // Debug log
-
-            // Check if response is valid
-            if (!response) {
-                throw new Error('No response received from server');
+            if (response.status === 'error') {
+                throw new Error(response.message);
             }
 
-            let products = response;
+            let products = response.products;
             let content = $('.admin-content');
             
             if (!content.length) {
@@ -89,7 +86,6 @@ function products() {
 
         } catch (error) {
             console.error('Error:', error);
-            // Show error to user
             $('.admin-content').html(`
                 <div class="alert alert-danger" role="alert">
                     <i class="fas fa-exclamation-circle"></i> Error loading products: ${error.message}
@@ -105,16 +101,145 @@ function products() {
 }
 
 function handleAddProduct() {
-    console.log('Add product clicked');
-    // Implement add product functionality
+    // Show add product modal
+    Swal.fire({
+        title: 'Add New Product',
+        html: `
+            <form id="add-product-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image URL</label>
+                    <input type="text" class="form-control" id="image">
+                </div>
+            </form>
+        `,
+        showCancelButton: true,
+        confirmButtonText: 'Add Product',
+        cancelButtonText: 'Cancel',
+        preConfirm: () => {
+            const formData = {
+                action: 'add',
+                name: $('#name').val(),
+                price: $('#price').val(),
+                description: $('#description').val(),
+                image: $('#image').val()
+            };
+
+            return $.post('myphp/product_actions.php', formData)
+                .then(response => {
+                    if (response.status === 'error') {
+                        throw new Error(response.message);
+                    }
+                    return response;
+                })
+                .catch(error => {
+                    Swal.showValidationMessage(`Request failed: ${error.message}`);
+                });
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire('Success!', 'Product added successfully.', 'success');
+            products(); // Refresh the products list
+        }
+    });
 }
 
 function handleEditProduct(id) {
-    console.log('Edit product clicked for ID:', id);
-    // Implement edit product functionality
+    // Get product details and show edit modal
+    const product = $('#products-body').find(`tr:has(button[data-id="${id}"])`).find('td');
+    
+    Swal.fire({
+        title: 'Edit Product',
+        html: `
+            <form id="edit-product-form">
+                <input type="hidden" id="id" value="${id}">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" value="${product.eq(1).text()}" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price" step="0.01" value="${product.eq(3).text().replace('$', '')}" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" required>${product.eq(2).text()}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image URL</label>
+                    <input type="text" class="form-control" id="image">
+                </div>
+            </form>
+        `,
+        showCancelButton: true,
+        confirmButtonText: 'Update Product',
+        cancelButtonText: 'Cancel',
+        preConfirm: () => {
+            const formData = {
+                action: 'edit',
+                id: id,
+                name: $('#name').val(),
+                price: $('#price').val(),
+                description: $('#description').val(),
+                image: $('#image').val()
+            };
+
+            return $.post('myphp/product_actions.php', formData)
+                .then(response => {
+                    if (response.status === 'error') {
+                        throw new Error(response.message);
+                    }
+                    return response;
+                })
+                .catch(error => {
+                    Swal.showValidationMessage(`Request failed: ${error.message}`);
+                });
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire('Success!', 'Product updated successfully.', 'success');
+            products(); // Refresh the products list
+        }
+    });
 }
 
 function handleDeleteProduct(id) {
-    console.log('Delete product clicked for ID:', id);
-    // Implement delete product functionality
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.post('myphp/product_actions.php', {
+                action: 'delete',
+                id: id
+            })
+            .done(function(response) {
+                if (response.status === 'success') {
+                    Swal.fire('Deleted!', 'Product has been deleted.', 'success');
+                    products(); // Refresh the products list
+                } else {
+                    Swal.fire('Error!', response.message, 'error');
+                }
+            })
+            .fail(function(error) {
+                Swal.fire('Error!', 'Failed to delete product.', 'error');
+            });
+        }
+    });
 }

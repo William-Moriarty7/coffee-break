@@ -2,7 +2,7 @@ let menuData = [];
 
 async function fet() {
     try {
-        let menu = await fetch("../orders/js/drinks/drinks-list.json");
+        let menu = await fetch("../orders/db/get-drinks.php");
         if (!menu.ok) {
             throw new Error(`HTTP error! status: ${menu.status}`);
         }
@@ -127,9 +127,76 @@ function editCustomerStatu(key){
             .then(result => {
                 Swal.fire('Success', result.message, 'success');
                 get_Stats_Cards();
+                const hash = window.location.hash;
+                switch(hash) {
+                    case '#orders':
+                        orders();
+                    default:
+                        customer();
+                }
             })
             .catch(error => {
                 Swal.fire('Error', error.message, 'error');
+            });
+        }
+    });
+}
+
+function delete_item(mood,key,page) {
+    if (!mood || !key) {
+        Swal.fire(
+            'Error!',
+            'Invalid data provided for deletion.',
+            'error'
+        );
+        return;
+    }
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: `You won't be able to revert this ${mood} deletion!`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.post("myphp/orders_actions.php", 
+                {
+                    action: mood,
+                    key: key
+                }
+            ).done(function(response) {
+                if(response.status === 'success') {
+                    Swal.fire({
+                        title: 'Deleted!',
+                        text: `The ${mood} has been deleted successfully.`,
+                        icon: 'success'
+                    }).then(() => {
+                        if(page == 'orders'){
+                            orders();
+                        }else if(page == 'customers'){
+                            customers()
+                        }else{
+                            console.log('nothing');
+                        }
+                        
+                    });
+                } else {
+                    Swal.fire(
+                        'Error!',
+                        response.message || `Failed to delete the ${mood}.`,
+                        'error'
+                    );
+                }
+            }).fail(function(xhr, status, error) {
+                Swal.fire(
+                    'Error!',
+                    `Network error occurred while deleting the ${mood}.`,
+                    'error'
+                );
             });
         }
     });

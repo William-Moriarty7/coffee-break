@@ -52,13 +52,7 @@ function customers() {
                                 <div class="search-box">
                                     <input type="text" id="customer-search" class="form-control" placeholder="Search customers...">
                                 </div>
-                                <div class="customer-filters">
-                                    <select id="status-filter" class="form-select">
-                                        <option value="all">All Customers</option>
-                                        <option value="active">Active</option>
-                                        <option value="inactive">Inactive</option>
-                                    </select>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -92,7 +86,7 @@ function customers() {
                     <td><span class="order-key">${customer.random_key || 'N/A'}</span></td>
                     <td>${formatDate(customer.created_at || new Date())}</td>
                     <td>
-                        <button class="action-btn delete" data-id="${customer.username || ''}" title="Delete Customer">
+                        <button class="action-btn delete" data-id="${customer.username || ''}" title="Delete Customer" onclick="delete_item('customer','${customer.random_key}','customers')")">
                             <i class="fas fa-trash"></i>
                         </button>
                     </td>

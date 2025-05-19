@@ -12,19 +12,41 @@ $db->exec('CREATE TABLE IF NOT EXISTS casher (
     created_at TEXT
 )');
 
-if($_SERVER['REQUEST_METHOD'] === "POST" && $_POST['status'] === 'customers'){
-    $stmt = $db->prepare('SELECT * FROM casher ORDER BY id DESC LIMIT 5');
-    $result = $stmt->execute();
-    $data = [];
+if($_SERVER['REQUEST_METHOD'] === "POST") {
+    if(isset($_POST['status']) && $_POST['status'] === 'customers') {
+        $stmt = $db->prepare('SELECT * FROM casher ORDER BY id DESC LIMIT 5');
+        $result = $stmt->execute();
+        $data = [];
 
-    while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
-        $data[] = $row;
+        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $data[] = $row;
+        }
+
+        echo json_encode([
+            'status'=> 'success',
+            'data'=> $data
+        ]);
+    } 
+    else if(isset($_POST['get_Recent_Orders'])) {
+        $stmt = $db->prepare('SELECT * FROM casher ORDER BY id DESC LIMIT 5');
+        $result = $stmt->execute();
+        $data = [];
+
+        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $data[] = [
+                'order_id' => $row['random_key'],
+                'customer_name' => $row['username'],
+                'items_count' => count(explode(',', $row['cartorder'])),
+                'total' => $row['full_price'],
+                'status' => $row['state'],
+                'state' => $row['state'],
+                'created_at' => $row['created_at'],
+                'cartorder' => $row['cartorder'],
+                'random_key' => $row['random_key']
+            ];
+        }
+
+        echo json_encode($data);
     }
-
-    echo json_encode([
-        'status'=> 'success',
-        'data'=> $data
-    ]);
 }
-
 ?>
