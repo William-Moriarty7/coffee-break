@@ -1,7 +1,15 @@
 
-# Coffee Break - Cozy Coffee Shop Website ☕
+<p align="center">
+  <img src="coffee-logo.svg" alt="Air Quality Logo" width="100"/>
+</p>
 
-A modern, responsive website for Coffee Break, a cozy coffee shop that offers a delightful experience for coffee enthusiasts. Order your coffee online and pick it up in just 1 minute!
+<h1 align="center">Coffee Break - Cozy Coffee Shop Website</h1>
+
+<p align="center">
+  <b>A modern, responsive website for Coffee Break, a cozy coffee shop that offers a delightful experience for coffee enthusiasts. Order your coffee online and pick it up in just 1 minute!.</b>
+</p>
+
+---
 
 ## 🌟 Features
 
