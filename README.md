@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="coffee-logo.svg" alt="Air Quality Logo" width="100"/>
+  <img src="coffee-icon.svg" alt="Air Quality Logo" width="100"/>
 </p>
 
 <h1 align="center">Coffee Break - Cozy Coffee Shop Website</h1>
